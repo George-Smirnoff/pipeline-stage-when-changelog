@@ -1,0 +1,16 @@
+pipeline{
+    agent none
+    options { 
+        timestamps () 
+        }
+    stages{
+        stage("Build") {
+            when {
+                changelog '.*some_text.*'
+            }
+            steps {
+                echo "We are running since commit massage has match"
+            }
+        }
+    }
+}
