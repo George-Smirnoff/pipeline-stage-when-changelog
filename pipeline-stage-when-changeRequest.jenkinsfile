@@ -6,10 +6,10 @@ pipeline{
     stages{
         stage("Build") {
             when {
-                changelog '.*some_text.*'
+                changeRequest ()
             }
             steps {
-                echo "We are running since commit massage has match"
+                echo "Hello world changing request"
             }
         }
     }
